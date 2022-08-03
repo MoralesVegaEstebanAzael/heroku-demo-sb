@@ -15,6 +15,12 @@ function getUserName(){
 }
 
 
+function initArticulo(){
+    document.getElementById("txtDescripcion").value = "";
+    document.getElementById("txtPrecioUnitario").value = 0;
+
+}
+
 async function  loadArticulos(){
     const request = await fetch('api/articulos/', {
         method: 'GET',

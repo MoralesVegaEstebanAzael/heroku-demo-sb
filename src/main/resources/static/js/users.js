@@ -1,7 +1,7 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
   loadUsers();
-  $('#users').DataTable();
+  $('#users').DataTable({  "bInfo" : false});
   getUserName();
 });
 
@@ -16,7 +16,6 @@ async function  loadUsers(){
       headers: getHeaders(),
     });
     const users = await request.json();
-    console.log(users);
     let userHtml;
     users.forEach(user=>{
         let deleteButton=" <a  href=\"#\" onclick='deleteUser("+user.id+")' class=\"btn btn-danger btn-circle btn-sm\">\n" +
